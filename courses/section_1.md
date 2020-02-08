@@ -6,6 +6,13 @@
 ### VSCodeのインストール
 https://code.visualstudio.com/
 
+- `command + shift + p`
+- `shell`を検索
+- `Shell Command: Install 'code' command in PATH`を選択
+
+```shell
+code index.html
+```
 
 ### gitのインストール
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -193,7 +200,9 @@ v12.13.1
 
 ```shell
 % mkdir src // Webpackのデフォルト設定（後で変更することもできます）
-% vim index.js
+
+# VScodeが立ち上がります
+% code index.js
 
 % npx webpack
 % npx webpack --mode=development
