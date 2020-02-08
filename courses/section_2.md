@@ -35,7 +35,7 @@
 #### HTMLファイル作成
 
 ```shell
-% vim ./dist/index.html
+% code ./dist/index.html
 ```
 
 ```html
@@ -58,7 +58,7 @@ main.js:1 this is module
 ### 設定ファイルを使用してビルドする
 
 ```shell
-% vim webpack.config.js
+% code webpack.config.js
 ```
 
 ```js
@@ -110,7 +110,7 @@ module.exports = {
 ### スタイルシートを読み込んで見る
 
 ```shell
-% vim ./src/modules/my.css
+% code ./src/modules/my.css
 ```
 
 ```css
@@ -164,7 +164,7 @@ Javascript以外のファイルを読み込もうとするとエラーになる�
 #### 確認
 
 ```shell
-% vim package.json
+% code package.json
 ```
 
 ```json
@@ -193,7 +193,7 @@ devDependenciesは `npm install` してもインストールされない。
 ### ローダーを使う
 
 ```shell
-vim webpack.config.js
+code webpack.config.js
 ```
 
 ```js
@@ -233,7 +233,7 @@ index.html をブラウザで確認。正常に動作しているはず。
 #### main.js を確認してみる
 
 ```shell
-% vim ./dist/main.js
+% code ./dist/main.js
 
 eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"body {\\n  color: lightblue;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/modules/my.css?");
 
@@ -290,7 +290,7 @@ CSSは読み込まれているが、使用されていない状態。
 #### main.js を確認してみる
 
 ```shell
-% vim ./dist/main.js
+% code ./dist/main.js
 
 # !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
 
