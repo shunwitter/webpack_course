@@ -6,6 +6,9 @@
 ### VSCodeのインストール
 https://code.visualstudio.com/
 
+#### codeコマンド
+https://code.visualstudio.com/docs/setup/mac
+
 - `command + shift + p`
 - `shell`を検索
 - `Shell Command: Install 'code' command in PATH`を選択
