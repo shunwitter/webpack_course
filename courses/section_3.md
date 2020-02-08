@@ -29,7 +29,7 @@ CSSを別ファイルに出力するには `MiniCssExtractPlugin` というプ�
 Webpackの設定ファイルを編集します。
 
 ```shell
-vim ./webpack.config.js
+code ./webpack.config.js
 ```
 
 ```js
@@ -75,7 +75,7 @@ module.exports = {
 中身を確認。
 
 ```shell
-vim ./dist/main.css
+code ./dist/main.css
 ```
 
 ```css
@@ -96,7 +96,7 @@ body {
 文字の色はデフォルトに戻ってしまっている。
 
 ```shell
-% vim ./dist/index.html
+% code ./dist/index.html
 ```
 
 ```html
@@ -146,7 +146,7 @@ body {
 #### プラグインを使用する設定を追加
 
 ```shell
-% vim webpack.config.js
+% code webpack.config.js
 ```
 
 ```js
@@ -180,7 +180,7 @@ index.html  219 bytes          [emitted]
 中身を確認しましょう。
 
 ```shell
-% vim ./dist/index.html
+% code ./dist/index.html
 ```
 
 ```html
@@ -229,7 +229,7 @@ this is module
 まずは雛形となるHTMLファイルを作成しましょう。
 
 ```shell
-% vim ./src/index.html
+% code ./src/index.html
 ```
 
 ```html
@@ -291,7 +291,7 @@ Javascriptも読み込まれていますので、ブラウザのConsoleでも今
 ファイルも確認してみてください。
 
 ```shell
-% vim ./dist/index.html
+% code ./dist/index.html
 ```
 
 この2行が自動で挿入されているのが確認できます。
