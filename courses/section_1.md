@@ -178,7 +178,14 @@ v12.13.1
 
 ```shell
 % npm init
-% npm install --save-dev webpack webpack-cli
+
+% npm view webpack
+# latest: 4.41.5
+
+% npm view webpack-cli
+# latest: 3.3.10
+
+% npm install --save-dev webpack@4.41.5 webpack-cli@3.3.10
 ```
 
 

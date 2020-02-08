@@ -152,7 +152,13 @@ Javascript以外のファイルを読み込もうとするとエラーになる�
 - [style-loader](https://github.com/webpack-contrib/style-loader)
 
 ```shell
-% npm install --save-dev css-loader style-loader
+% npm view css-loader
+# latest: 3.4.2
+
+% npm view style-loader
+# latest: 1.1.3
+
+% npm install --save-dev css-loader@3.4.2 style-loader@1.1.3
 ```
 
 #### 確認
