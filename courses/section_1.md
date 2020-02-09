@@ -17,6 +17,16 @@ https://code.visualstudio.com/docs/setup/mac
 code index.html
 ```
 
+### 基本的なウェブサイトの構成
+
+- index.html
+- javascripts/
+  - main.js
+- stylesheets/
+  - main.css
+- images/
+  - thumbnail.jpg
+
 ### gitのインストール
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
