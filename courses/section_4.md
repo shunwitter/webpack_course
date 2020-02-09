@@ -74,10 +74,6 @@ module.exports = {
 
 生成されるHTMLにはCSSを読み込む記述が自動で書き込まれるので、意識することは少ないですが、CSSファイルの名前を変更することもできます。
 
-```shell
-code webpack.config.js
-```
-
 ```js
 // webpack.config.js
 
