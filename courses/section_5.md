@@ -119,7 +119,7 @@ moduleの設定にruleを追加しましょう。
 <!-- src/template/index.html -->
 
 <!-- 削除 -->
-<img src="../images/icon.png" />
+<!-- img src="../images/icon.png" / -->
 
 <!-- 追加 -->
 <img src="<%= require('../images/icon.png') %>" />
@@ -361,3 +361,10 @@ WARNING in Conflict: Multiple assets emit different content to the same filename
 `[name].[ext]`という特殊な書き方が出てきました。
 `[name]`はオリジナルファイルのファイル名、`[ext]`はオリジナルファイルの拡張子という意味になります。
 再度ビルドしてみると、`dist/images`フォルダには`src`フォルダの画像と同名の画像ファイルが出力されるかと思います。
+
+
+```shell
+% open -a "Google Chrome" dist/index.html
+```
+
+ブラウザでも2つの画像が表示されていることを確認してください。
