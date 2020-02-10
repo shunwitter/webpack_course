@@ -7,3 +7,6 @@
 - [Section 5](https://github.com/shunwitter/webpack_course/blob/master/courses/section_5.md)
 - [Section 6](https://github.com/shunwitter/webpack_course/blob/master/courses/section_6.md)
 - [Section 7](https://github.com/shunwitter/webpack_course/blob/master/courses/section_7.md)
+- [Section 8](https://github.com/shunwitter/webpack_course/blob/master/courses/section_8.md)
+- [Section 9](https://github.com/shunwitter/webpack_course/blob/master/courses/section_9.md)
+- [Section 10](https://github.com/shunwitter/webpack_course/blob/master/courses/section_10.md)
