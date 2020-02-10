@@ -1,5 +1,5 @@
 import my from './my';
-import '../stylesheets/my.css';
+import '../stylesheets/main.css';
 
 console.log('This is index.js');
 my();
