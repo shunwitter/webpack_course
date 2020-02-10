@@ -64,14 +64,14 @@ HTMLについてはPugを利用して効率化できました。
 #### ファイル名を変更します
 
 ```shell
-% mv src/stylesheets/my.css src/stylesheets/my.scss
+% mv src/stylesheets/main.css src/stylesheets/main.scss
 ```
 
 ```js
 // src/javascripts/main.js
 
 import my from './my';
-import '../stylesheets/my.scss'; // 変更
+import '../stylesheets/main.scss'; // 変更
 
 console.log('This is index.js');
 my();
