@@ -89,21 +89,20 @@ block content
 - index.html
 - access.html
 - members/
-  - shunsuke_sawada.html
+  - taro.html
 ```
 
 このように、`members`フォルダの中にさらにHTMLを配置します。
 
 ```shell
-% code src/templates/members/shunsuke_sawada.pug
+% code src/templates/members/taro.pug
 ```
 
 ```pug
 extends ../_layout.pug
 block locals
-  - var title = 'Shunsuke Sawada'
+  - var title = 'Taro'
 block content
-  img(src="../../images/user.png")
   p メンバー紹介ページです
 ```
 
@@ -178,12 +177,11 @@ block content
      members/taro.html  489 bytes          [emitted] 
 ```
 
-`dist`フォルダに注目してください。正しく設定したはずなのに`members/taro.html`は作成されていません。それどころかファイルがすべて消えてしまいました。なぜでしょうか。
+`dist`フォルダに注目してください。正しく設定したはずなのに`members/taro.html`は作成されていません。
 
-#### 消えたファイル
+#### 保存されないファイル
 
-実は`webpack-dev-server`のビルドはファイルとして出力されず、すべてメモリ上に保存されますので、ファイルとして見ることができません。`dist`フォルダのファイルは`clean-webpack-plugin`によって全て削除されるため、結果として空なります。
-ファイルを確認するためには、今まで通り`npx webpack --mode=development`を実行すればOKです。
+実は`webpack-dev-server`のビルドはファイルとして出力されず、すべてメモリ上に保存されますので、ファイルとして見ることができません。ファイルを確認するためには、今まで通り`npx webpack --mode=development`を実行すればOKです。
 
 #### HTMLの確認
 
