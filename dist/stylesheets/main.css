@@ -1,6 +1,2 @@
-p[data-v-61755dfd]{color:green}
+.menu{display:flex;margin-bottom:4em}.menu__item{margin-right:0.5em}.menu__item a{padding:0.5em;border-bottom:4px solid #ddd;text-decoration:none}.menu__item a:hover{color:green}.footer{background-color:#ddd;text-align:center;padding:3em;font-size:0.8em;letter-spacing:1px;border-radius:0.5em}html,body,div,p,img,h1,h2,h3,h4,h5{box-sizing:border-box}body{margin:0;padding:0;font-size:16px;font-family:sans-serif}h1{font-size:2em}.container{width:980px;max-width:100%;margin:0 auto;padding:0.5em}.main-image{background-image:url(/images/thumbnail.jpg);background-repeat:no-repeat;background-size:cover;background-position:center center;position:relative;width:100%;height:600px;border-radius:2em;margin:1em 0}.icon{background-color:#fff;width:64px;height:64px;border-radius:32px;padding:4px;position:absolute;top:1em;left:1em}
 
-.footer{background-color:#ddd}body{color:lightblue}body .purple{color:purple}.content{margin-right:16px}.content .title,.content .title-lg{font-size:24px;color:orange}.content .title-lg{font-size:32px}
-
-
-/*# sourceMappingURL=main.css.map*/

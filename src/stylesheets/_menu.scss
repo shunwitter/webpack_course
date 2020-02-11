@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  margin-bottom: 4em;
+  &__item {
+    margin-right: 0.5em;
+    a {
+      padding: 0.5em;
+      border-bottom: 4px solid #ddd;
+      text-decoration: none;
+      &:hover {
+        color: green;
+      }
+    }
+  }
+}

@@ -1,25 +1,47 @@
+@import 'menu.scss';
 @import 'footer.scss';
 
-@mixin set-margin($direction, $value) {
-  margin-#{$direction}: $value;
+html, body, div, p, img, h1, h2, h3, h4, h5 {
+  box-sizing: border-box;
 }
 
 body {
-  color: lightblue;
-  .purple {
-    color: purple;
-  }
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: sans-serif;
 }
 
-$text-color: orange;
-.content {
-  .title {
-    font-size: 24px;
-    color: $text-color;
-  }
-  .title-lg {
-    @extend .title;
-    font-size: 32px;
-  }
-  @include set-margin(right, 16px);
+h1 {
+  font-size: 2em;
+}
+
+.container {
+  width: 980px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+.main-image {
+  background-image: url('../images/thumbnail.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 2em;
+  margin: 1em 0;
+}
+
+.icon {
+  background-color: #fff;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  padding: 4px;
+  position: absolute;
+  top: 1em;
+  left: 1em;
 }

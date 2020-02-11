@@ -1,5 +1,4 @@
 
 
-
 - netlifyへのデプロイ
 - githubページの利用
