@@ -42,13 +42,10 @@ Netrifyを使わなくても、その他いろいろなサービス（例えばA
 
 ### ドメイン
 
-サブドメインをカスタマイズします。
-カスタムドメインを設定することもできますので、興味ある方は調べてみてください。（といっても非常に簡単です）
+サブドメインをカスタマイズします。サブドメインはNetrifyでユニークになる必要があります。
+カスタムドメインを設定することもできますので、興味ある方は調べてみてください（といっても非常に簡単です）。
 
 <img width="600" alt="netrify_5" src="https://user-images.githubusercontent.com/3123900/74247827-09680a80-4d2a-11ea-92e0-2f0dbf1f3f40.png">
-
-- [https://webpack-course.netlify.com/](https://webpack-course.netlify.com/)
-- サブドメインはNetrifyでユニークになる必要があります。
 
 ### キャッシュ対応
 
@@ -111,3 +108,6 @@ Githubにプッシュして、リリースしましょう。
 % git commit -m 'Add hash to filename'
 % git push
 ```
+
+こちらに公開されました。
+[https://webpack-course.netlify.com/](https://webpack-course.netlify.com/)
