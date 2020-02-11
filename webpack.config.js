@@ -10,7 +10,7 @@ module.exports = {
     main: './src/javascripts/main.js',
   },
   output: {
-    path: path.resolve(__dirname, './docs'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'javascripts/main.js',
   },
   module: {

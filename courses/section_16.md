@@ -14,49 +14,13 @@
 このブランチで行ったこと
 --------------------------------
 
-### Github Page として公開する
+### Netrifyでサイトを公開する
 
-- https://pages.github.com/
+- https://www.netlify.com/
 
-Githubでは、`/docs`フォルダをウェブサイトとして公開することができます。
+Netrifyは静的ウェブサイトを簡単に公開することができるサービスです。
+Githubと連携させることができ、pushするだけで公開が完了します。
 
-現在のWebpackの設定では、ビルド後のファイルは`dist`フォルダに保存されています。
-Webpackのデフォルトの挙動ですが、これを修正します。
+単純なウェブサイトホスティングだけであれば無料で使用できます。
+Netrifyを使わなくても、その他いろいろなサービス（例えばAWSやレンタルサーバー）でホスティングできますので、都合の良いものを選択してください。
 
-```js
-// webpack.config.js
-
-module.exports = {
-  mode: 'production',
-  devtool: 'eval-source-map',
-  entry: {
-    main: './src/javascripts/main.js',
-  },
-  output: {
-    path: path.resolve(__dirname, './docs'), // 変更
-    filename: 'javascripts/main.js',
-  },
-  // ...
-}
-```
-
-#### ビルド
-
-```shell
-% npm run build
-```
-
-ビルドすると`dist`ではなくて`docs`フォルダに保存されました。
-`dist`フォルダは不要なので削除してしまいましょう。
-
-この状態でmasterブランチをGithubuにpushします。
-
-```shell
-% git add .
-% git commit -m 'Emit files to docs'
-% git push
-```
-
-
-
-### Netlify
