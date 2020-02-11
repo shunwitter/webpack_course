@@ -127,8 +127,8 @@ import '../stylesheets/main.scss';
 
 ### 見た目の調整
 
-- `footer.scss`を`_footer.scss`にリネーム
-- `_menu.scss`を作成
+- `footer.scss`を`_footer.scss`に
+- `_menu.scss`を作成
 
 ```scss
 // src/stylesheets/main.scss
@@ -321,5 +321,5 @@ const App = (props) => {
 // ...
 ```
 
-Styled component を使うと通常のCSSと同じようにスタイルを記述でき、なおかつコンポーネントの中だけにスタイルが閉じ込められうというメリットがあります。
+Styled component を使うと通常のCSSと同じようにスタイルを記述でき、なおかつ、コンポーネントの中だけにスタイルを閉じ込めることができるメリットがあります。
 無理して使う必要はありませんが、Reactで実装する時は検討してみてください。
