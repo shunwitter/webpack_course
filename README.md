@@ -15,3 +15,4 @@
 - [Section 13](https://github.com/shunwitter/webpack_course/blob/master/courses/section_13.md)
 - [Section 14](https://github.com/shunwitter/webpack_course/blob/master/courses/section_14.md)
 - [Section 15](https://github.com/shunwitter/webpack_course/blob/master/courses/section_15.md)
+- [Section 16](https://github.com/shunwitter/webpack_course/blob/master/courses/section_16.md)
