@@ -74,13 +74,45 @@ export default (a: number, b: number): string => {
 }
 ```
 
+```js
+// src/javascripts/main.js
+
+import Vue from 'vue';
+import VueApp from'./VueApp.vue';
+
+import my from './my';
+import './reactApp.jsx';
+import '../stylesheets/main.scss';
+
+// 追加(.tsを付けてくだだい)
+import add from './add.ts';
+// 追加
+console.log(add(3, 9));
+console.log('This is index.js');
+my();
+
+new Vue({
+  el: '#vue-root',
+  render: (h) => h(VueApp),
+});
+
+```
+
 `:number`や`:string`が型定義です。
 型を使って、数字を入力すると、文字列が出力される、ということが明確になりました。
 
+ブラウザのコンソールを確認してください。下のように出力されます。
+
+```
+Result is 12!
+```
+
+
 ### ReactコンポーネントをTypeScriptで作成する
 
-ReactもTypeScriptで書くことによって可読性が高まります。
+ReactもTypeScriptで書くことによって可読性が高まります。
 `.tsx`という拡張子を使ってReactコンポーネントを作成しましょう。
+`.tsx`はすでにWebpackの設定ファイルに追加済です。
 
 ```tsx
 // src/javascripts/alert.tsx
@@ -98,9 +130,10 @@ const Alert: React.FC<{ message: string }> = ({ message }) => {
 export default Alert;
 ```
 
-#### main.jsに読み込み
+#### `main.js`に読み込み
 
 作成した`Alert`を以前作成したReact(`src/javascripts/reactApp.jsx`)に読み込んでみたいと思います。
+拡張子`.tsx`を忘れないでください。
 
 ```js
 // src/javascripts/reactApp.js
@@ -153,6 +186,4 @@ Could not find a declaration file for module 'react'. '/Users/ss/Dev/webpack_cou
 
 完了したらアラートも消えるかと思います。
 
-このようにTypeScriptは、`.js.` `.jsx` 等と混在して使用することができるので、少しずつ型定義を利用できる柔軟性があります。
-
-
+このようにTypeScriptは、`.js.` `.jsx` 等と混在して使用することができるので、少しずつ型定義を利用できる柔軟性があります。もちろんJavascriptのみでウェブサイトを制作しても全く問題ありません。慣れてきたら少しずつTypeScriptを導入すると良いと思います。
