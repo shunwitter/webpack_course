@@ -184,7 +184,7 @@ h1 {
 ```
 
 ```scss
-// src/stylesheets/footer.scss
+// src/stylesheets/_footer.scss
 
 .footer {
   background-color: #ddd;
@@ -197,7 +197,7 @@ h1 {
 ```
 
 ```scss
-// src/stylesheets/menu.scss
+// src/stylesheets/_menu.scss
 
 .menu {
   display: flex;
