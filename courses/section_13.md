@@ -39,6 +39,12 @@ Babelの設定は完了していますので、Vueの設定のみ説明してい
 
 ```js
 // webpack.js.config
+
+// 追加
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+// ...
+
   module: {
     rules: [
       // 追加
@@ -54,6 +60,12 @@ Babelの設定は完了していますので、Vueの設定のみ説明してい
     ],
   },
   // ...
+  plugins: [
+    // 追加
+    new VueLoaderPlugin(),
+  ],
+
+// ...
 ```
 
 ビルドエラーがないことを確認しましょう。
