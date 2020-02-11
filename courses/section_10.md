@@ -123,7 +123,7 @@ module.exports = {
 
 コマンドが増えてきたので`package.json`にまとめたいと思います。
 
-```json
+```
 {
   "name": "webpack_test",
   "version": "1.0.0",
@@ -163,13 +163,3 @@ module.exports = {
   },
   // ...
 ```
-
-
-
-- 画像の最適化
-
-
-- reactのインストール
-- vueのインストール
-- netlifyへのデプロイ
-- githubページの利用
