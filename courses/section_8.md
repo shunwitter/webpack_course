@@ -269,3 +269,18 @@ $text-color: orange;
 
 その他、いろいろ便利な機能がSassにはあります。
 ぜひ[公式ドキュメント](https://sass-lang.com/)を読んでみてください。
+
+### ベンダープリフィクス
+
+古いブラウザをサポートする場合にはCSSにベンダープリフィクスを使用する必要があるかと思います。
+ベンダープリフィクスを手動で書いていくのは面倒な作業ですが、`Autoprefixer`を使用すれば自動化することができます。
+
+`Autoprefixer`は便利ですが、最近ではベンダープリフィクスなしで多くのプロパティが利用可能になっており、対象ブラウザによっては不要なことも多いです。
+
+例えば`flexbox`は、このようなカバレッジになっています。
+https://caniuse.com/#feat=flexbox
+
+今後もベンダープリフィクスは不要になっていくと思いますので、このコースでは`Autoprefixer`を導入していきませんが、古いブラウザ対応が必要な場合は、`postcss-loader`と`autoprefixer`を利用することで自動化することができます。必要に応じて調べてみてください。
+
+- [postcss-loader](https://github.com/postcss/postcss-loader)
+- [autoprefixer](https://github.com/postcss/autoprefixer)
