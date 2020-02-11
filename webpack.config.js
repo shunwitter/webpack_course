@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
+  devtool: 'source-map',
   entry: {
     main: './src/javascripts/main.js',
   },
@@ -35,6 +37,7 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: { sourceMap: true },
           },
           {
             loader: 'sass-loader',

@@ -194,3 +194,28 @@ options: {
 ```
 
 対象ブラウザの設定方法については、[こちら](https://github.com/browserslist/browserslist)を参考にしてください。
+
+### ES6
+
+他にもモダンなJavascriptでは便利が機能が使えますので、ご自身で調べてみてください。
+
+#### Spread syntax
+
+```js
+// src/javascripts/my.js
+
+export default () => {
+  const obj = { a: 1, b: 2 };
+  const newObj = { ...obj, c: 3 };
+  console.log('this is module', newObj);
+};
+```
+
+```js
+// dist/javascripts/mainn.js
+
+(function () {\n  var obj = {\n    a: 1,\n    b: 2\n  };\n\n  var newObj = _objectSpread({}, obj, {\n    c: 3\n  });\n\n  console.log('this is module', newObj);\n});
+```
+
+参考サイト：
+https://www.taniarascia.com/es6-syntax-and-feature-overview/
