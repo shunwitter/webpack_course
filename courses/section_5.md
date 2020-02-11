@@ -307,7 +307,7 @@ Webpackに`.jpg`を扱えるよう下記のように設定を変更します。`
   // ...
 
       {
-        test: /\.png|.jpg/,
+        test: /\.png|\.jpg/,
         use: [
           {
             loader: 'file-loader',
