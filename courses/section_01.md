@@ -7,7 +7,6 @@
 https://github.com/
 
 - 登録方法
-- レポジトリの作成の作成方法
 
 
 ### Gitのインストール
@@ -175,6 +174,34 @@ Identity added: /Users/ss/.ssh/id_rsa_github (your_email@example.com)
 # キーチェーンにパスフレーズが登録してあるので、次回からも入力不要。
 % ssh-agent -k
 ```
+
+### Githubへのプッシュ
+
+Githubとの連携ができましたので、手元のGitの変更履歴をGithubに送ってみたいと思います。
+
+- レポジトリを作成
+
+```shell
+% git init
+% git remote add origin xxxxxx
+% vim test.md
+% git add .
+% git commit -m 'Initial commit'
+% git push
+```
+
+コミット履歴を確認し、URLの最後に`.patch`と付け加えてリターンを押します。
+
+- 例：
+  - https://github.com/user_name/repo_name/commit/xxxxxxxxx78c1303931ce67.patch
+
+変更履歴が表示されますが、下記を確認してください。
+
+- 自分の`user.name`が設定されている
+- 自分の`user.email`が設定されている
+- メールアドレスを隠した人は、メールアドレスが`noreply`である
+
+
 
 ### VSCodeのインストール
 https://code.visualstudio.com/
