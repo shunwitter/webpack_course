@@ -3,30 +3,6 @@
 このブランチの前に行ったこと
 --------------------------------
 
-### VSCodeのインストール
-https://code.visualstudio.com/
-
-#### codeコマンド
-https://code.visualstudio.com/docs/setup/mac
-
-- `command + shift + p`
-- `shell`を検索
-- `Shell Command: Install 'code' command in PATH`を選択
-
-```shell
-code index.html
-```
-
-### 基本的なウェブサイトの構成
-
-- index.html
-- javascripts/
-  - main.js
-- stylesheets/
-  - main.css
-- images/
-  - thumbnail.jpg
-
 ### gitのインストール
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
@@ -130,6 +106,30 @@ Identity added: /Users/ss/.ssh/id_rsa_github (your_email@example.com)
 # キーチェーンにパスフレーズが登録してあるので、次回からも入力不要。
 % ssh-agent -k
 ```
+
+### VSCodeのインストール
+https://code.visualstudio.com/
+
+#### codeコマンド
+https://code.visualstudio.com/docs/setup/mac
+
+- `command + shift + p`
+- `shell`を検索
+- `Shell Command: Install 'code' command in PATH`を選択
+
+```shell
+code index.html
+```
+
+### 基本的なウェブサイトの構成
+
+- index.html
+- javascripts/
+  - main.js
+- stylesheets/
+  - main.css
+- images/
+  - thumbnail.jpg
 
 
 ### gitの初期化
