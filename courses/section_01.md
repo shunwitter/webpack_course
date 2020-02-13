@@ -3,15 +3,84 @@
 このブランチの前に行ったこと
 --------------------------------
 
-### gitのインストール
-https://git-scm.com/
-
-
 ### githubの登録
 https://github.com/
 
 - 登録方法
 - レポジトリの作成の作成方法
+
+
+### Gitのインストール
+https://git-scm.com/
+
+- homebrewとMacOSインストーラーのバージョンは異なる
+
+### Git user.name を設定
+
+- 任意の文字列でOK
+- 各コミットに記録される
+- 後でも変更できる
+
+```shell
+# 確認
+% git config user.name
+=> shunwitter
+
+# 設定
+# --globalが無いと単独のレポジトリのみ適応
+% git config --global user.name "shun"
+
+# 確認
+% git config user.name
+=> shun
+```
+
+### Git user.email を設定
+
+GithubはGithubアカウントとコミットを紐付けるために`user.email`を使用しています。
+すべての変更履歴はこのメールアドレスとともに記録され、誰が加えた変更なのかがひと目で分かります。
+
+```shell
+# 確認
+% git config user.email
+
+# 設定
+# --globalが無いと単独のレポジトリのみ適応
+% git config --global user.email "xxx.xxx@gmail.com"
+
+# 確認
+% git config user.email
+=> xxx.xxx@gmail.com
+```
+
+設定はこれで完了なのですが、プライベートなメールアドレスを公にしたくない人もいると思います。
+普段使っているメールアドレスを登録しても、迷惑メールが増えるといったことは無いと思いますが、心配な人は下記の手順に従ってください。
+
+#### プライベートなメールアドレスを隠す方法
+
+Settings > Emails > Keep my email addresses private
+
+チェックボックスするとメールアドレスが生成されます。
+
+> Keep my email addresses private
+> We’ll remove your public profile email and use `3123900+shunwitter@users.noreply.github.com` when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must set your email in Git.
+
+こちらもチェックしておきます。
+
+> Block command line pushes that expose my email
+> If you push commits that use a private email as your author email we will block the push and warn you about exposing your private email.
+
+`3123900+shunwitter@users.noreply.github.com` をuser.emailに使用しましょう。
+
+```shell
+# 設定
+# --globalが無いと単独のレポジトリのみ適応
+% git config --global user.email "3123900+shunwitter@users.noreply.github.com"
+
+# 確認
+% git config user.email
+=> 3123900+shunwitter@users.noreply.github.com
+```
 
 
 ### sshでgithubと接続する
