@@ -94,8 +94,8 @@ Netrifyを使わなくても、その他いろいろなサービス（例えばA
 
                                                 Asset       Size  Chunks                         Chunk Names
           ./stylesheets/main-4c8c9622edc2648b0bd2.css  860 bytes       0  [emitted] [immutable]  main
-     images/icon-968be9d129410e2475848d3c6e948755.png    3.8 KiB          [emitted]              
-images/thumbnail-045274200ab5e6c3400be67a8f03a729.jpg    125 KiB          [emitted]              
+     images/icon-968be9d129410e2475848d3c6e948755.png    3.8 KiB          [emitted]
+images/thumbnail-045274200ab5e6c3400be67a8f03a729.jpg    125 KiB          [emitted]
              javascripts/main-4c8c9622edc2648b0bd2.js    161 KiB       0  [emitted] [immutable]  main
 ```
 

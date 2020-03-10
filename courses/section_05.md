@@ -46,7 +46,7 @@ src/
 
 ```
 ./stylesheets/main.css   30 bytes    main  [emitted]  main
-            index.html  434 bytes          [emitted]  
+            index.html  434 bytes          [emitted]
    javascripts/main.js   5.28 KiB    main  [emitted]  main
 ```
 
@@ -57,13 +57,32 @@ src/
 GET file:///Users/ss/Dev/webpack_course/images/icon.png net::ERR_FILE_NOT_FOUND
 ```
 
+### 画像を読み込む
+
+画像を読み込む方法を変更しました。
+これは`webpack-html-plugin`が[lodash](https://lodash.com/docs/4.17.15#template)というライブラリに依存しているためで、少し面倒な指定方法になりますが、後で改善していきます。
+
+```html
+<!-- src/template/index.html -->
+
+<!-- 削除 -->
+<!-- img src="../images/icon.png" / -->
+
+<!-- 追加 -->
+<img src="<%= require('../images/icon.png') %>" />
+```
+
+この状態でビルドするとエラーになります。
+`.png`というファイルを扱う方法をWebpackが知らない状態です。
+
+
 ### url-loader
 
 - [url-loader](https://github.com/webpack-contrib/url-loader) を使って画像を読み込んでみます。
 
 ```shell
 % npm view url-loader
-# latest: 3.0.0 
+# latest: 3.0.0
 
 % npm install --save-dev url-loader@3.0.0
 ```
@@ -107,28 +126,6 @@ moduleの設定にruleを追加しましょう。
 
 ```
 
-
-```shell
-% npx webpack --mode=development
-```
-
-ビルドしても変化がありません。
-テンプレートも編集する必要があります。
-
-```html
-<!-- src/template/index.html -->
-
-<!-- 削除 -->
-<!-- img src="../images/icon.png" / -->
-
-<!-- 追加 -->
-<img src="<%= require('../images/icon.png') %>" />
-```
-
-画像を読み込む方法を変更しました。
-これは`webpack-html-plugin`が[lodash](https://lodash.com/docs/4.17.15#template)というライブラリに依存しているためで、少し面倒な指定方法になりますが、後で改善していきます。
-
-
 ```shell
 % npx webpack --mode=development
 
@@ -166,7 +163,7 @@ moduleの設定にruleを追加しましょう。
 
 ```shell
 % npm view file-loader
-# latest: 5.0.2  
+# latest: 5.0.2
 
 % npm install --save-dev file-loader@5.0.2
 ```
@@ -211,8 +208,8 @@ moduleの設定にruleを追加しましょう。
 % npx webpack --mode=development
 
               ./stylesheets/main.css   30 bytes    main  [emitted]  main
-5de78d047f515312fd12d11f42bf86e9.png   9.75 KiB          [emitted]  
-                          index.html  452 bytes          [emitted]  
+5de78d047f515312fd12d11f42bf86e9.png   9.75 KiB          [emitted]
+                          index.html  452 bytes          [emitted]
                  javascripts/main.js   5.28 KiB    main  [emitted]  main
 ```
 
@@ -294,7 +291,7 @@ dist/
 
 ERROR in ./src/images/thumbnail.jpg 1:0
     Module parse failed: Unexpected character '�' (1:0)
-    You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. 
+    You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file.
 ```
 
 ビルドコマンドを実行するとエラーになりました。
@@ -326,7 +323,7 @@ Webpackに`.jpg`を扱えるよう下記のように設定を変更します。`
 ```shell
 % npx webpack --mode=development
 
-WARNING in Conflict: Multiple assets emit different content to the same filename images/icon.png 
+WARNING in Conflict: Multiple assets emit different content to the same filename images/icon.png
 ```
 
 ビルドは成功したように見えますが、このような警告が出ました。

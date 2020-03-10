@@ -290,31 +290,24 @@ Reactのスタイルシートを効率的に書ける方法を紹介します。
 ```
 
 ```jsx
-// src/javascripts/reactApp.jsx
+// src/javascripts/Alert.jsx
 
-import ReactDom from 'react-dom';
 import * as React from 'react';
-// 追加
 import styled from 'styled-components';
 
-import Alert from './Alert.tsx';
-
 // 追加
-const AppContainer = styled.div`
-  p {
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    color: green;
-  }
+const AlertContainer = styled.div`
+  background-color: green;
+  color: #fff;
+  padding: 1em;
 `;
 
-const App = (props) => {
+const Alert: React.FC<{ message: string }> = ({ message }) => {
+  {/* divを置き換え */}
   return (
-    {/* divを置き換え */}
-    <AppContainer>
-      <p>Hello, React App!!!!!!</p>
-      <Alert message="Success!" />
-    </AppContainer>
+    <AlertContainer>
+      {message}
+    </AlertContainer>
   );
 };
 

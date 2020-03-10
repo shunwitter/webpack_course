@@ -6,7 +6,6 @@
 - `babel`のインストール
 - `@babel/preset-env`のインストール
 - ECMAScript 6
-- Autoprefixerの説明
 
 　　
 　　
@@ -123,6 +122,20 @@ module.exports = {
 
 コマンドが増えてきたので`package.json`にまとめたいと思います。
 
+
+```js
+// webpack.config.js
+
+module.exports = {
+  // 変更
+  mode: 'development',
+  devtool: 'source-map',
+  entry: {
+    main: './src/javascripts/main.js',
+  },
+  // ...
+```
+
 ```
 {
   "name": "webpack_test",
@@ -134,8 +147,8 @@ module.exports = {
     // "test": "echo \"Error: no test specified\" && exit 1"
     // 追加
     "start": "webpack-dev-server",
-    "build": "webpack",
-    "build:dev": "webpack --mode=development"
+    "build": "webpack --mode=production",
+    "build:dev": "webpack"
   },
   // ...
 }
@@ -149,17 +162,4 @@ module.exports = {
 % npm run build:dev
 ```
 
-`mode`オプションのデフォルトは`production`なので、設定ファイルから削除しておきます。
 
-```js
-// webpack.config.js
-
-module.exports = {
-  // 削除
-  // mode: 'production',
-  devtool: 'source-map',
-  entry: {
-    main: './src/javascripts/main.js',
-  },
-  // ...
-```

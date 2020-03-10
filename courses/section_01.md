@@ -3,11 +3,21 @@
 このブランチの前に行ったこと
 --------------------------------
 
+### Gitのメリット
+
+- 変更履歴のトラッキング
+- ロールバック
+- ブランチごとの開発
+
+### Githubのメリット
+
+- デファクトスタンダード
+- チーム開発
+
 ### githubの登録
 https://github.com/
 
 - 登録方法
-
 
 ### Gitのインストール
 https://git-scm.com/
@@ -133,7 +143,7 @@ Enter passphrase for key '/Users/ss/.ssh/id_rsa_github': test
 ```shell
 % vim ~/.ssh/config
 
-Host github
+Host github.com
   HostName github.com
   IdentityFile ~/.ssh/id_rsa_github
   User git
@@ -150,7 +160,7 @@ https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-
 ```shell
 %vim ~/.ssh/config
 
-Host github
+Host github.com
   HostName github.com
   IdentityFile ~/.ssh/id_rsa_github
   User git
@@ -217,6 +227,20 @@ https://code.visualstudio.com/docs/setup/mac
 code index.html
 ```
 
+#### 入れておいた方が良い設定
+
+- 行末のホワイトスペースを削除
+  - files.trimTrailingWhitespace
+- 最後に空行を入れる
+  - files.insertFinalNewline
+
+### Tips
+
+- ファイル検索
+  - ⌘ + P
+- 元の場所に戻る
+  - ^ + _
+
 ### 基本的なウェブサイトの構成
 
 - index.html
@@ -227,15 +251,10 @@ code index.html
 - images/
   - thumbnail.jpg
 
+　　
 
-### gitの初期化
-
-```
-% git init
-% git add .
-% git commit -m 'Initial commit'
-```
-
+このブランチで行ったこと
+--------------------------------
 
 ### nodejsのインストール
 
@@ -276,7 +295,7 @@ code index.html
 % nvm install 12.15.0
 
 # インストールされているnodeバージョンを確認
-% nvm ls         
+% nvm ls
 ->     v12.13.1
 
 # 現在のnodeバージョンを確認
@@ -284,12 +303,6 @@ code index.html
 v12.13.1
 ```
 　　
-　　
-
-このブランチで行ったこと
---------------------------------
-
-
 #### Webpackのインストール
 
 ```shell
@@ -304,22 +317,74 @@ v12.13.1
 % npm install --save-dev webpack@4.41.5 webpack-cli@3.3.10
 ```
 
+#### --save / --save-dev / オプションなしの違い
+
+- `--save dependencies` を付けると `dependencies` に入る
+- `--save-dev` を付けると `devDependencies` に入る
+
+コードをパッケージ化して公開する時に影響する。
+dependenciesは `npm install` の際に一緒にインストールされる。
+devDependenciesは `npm install` してもインストールされない。
+
+今回は自分用のプロジェクトであり、パッケージ化しないので、すべて `devDependencies` で良い。
+もしモジュールとして他の人が使えるパッケージにしたい、という場合は `dependencies` を使っていく。
+
 
 ### 初めてのビルド
 
 ```shell
 % mkdir src // Webpackのデフォルト設定（後で変更することもできます）
 
-# VScodeが立ち上がります
+### VScodeが立ち上がります
 % code index.js
 
 % npx webpack
 % npx webpack --mode=development
 ```
 
-
 ### 確認
 
 ```shell
 % code dist/main.js
 ```
+
+### モジュールを読み込む
+
+```shell
+% mkdir ./src/modules
+% code ./src/modules/my.js
+```
+
+```js
+// modules/my.js
+
+export default () => {
+  console.log('this is module');
+};
+
+
+// src/index.js
+
+import my from './modules/my';
+
+console.log('This is index.js');
+my();
+```
+
+
+### gitignore
+
+ここまで来たらGitにコミットしてGithubにプッシュしましょう。
+その前に `.gitignore` を作成します。
+
+```shell
+% code .gitignore
+```
+
+```
+# .gitignore
+
+node_modules/
+```
+
+これで `node_module` をGitの追跡から外すことができます。

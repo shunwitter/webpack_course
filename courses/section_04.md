@@ -29,7 +29,7 @@ HTML / CSS / JS の構成でファイルが書き出せるようになりまし�
 
 このセクションでは`webpack.config.js`をカスタマイズして、ファイル構成を改善していきます。
 
-### clean-webpack-plugin 
+### clean-webpack-plugin
 
 このセクションでは、ファイルの名前や構成を頻繁に変更することになります。
 構成を変える前と後では出力されるファイル名が違うため、`dist`フォルダに使用していない不要なファイルが残ってしまいます。
@@ -40,7 +40,7 @@ HTML / CSS / JS の構成でファイルが書き出せるようになりまし�
 
 ```shell
 % npm view clean-webpack-plugin
-# latest: 3.0.0 
+# latest: 3.0.0
 
 % npm install --save-dev clean-webpack-plugin@3.0.0
 ```
@@ -224,7 +224,7 @@ src/
 
 module.exports = {
   entry: {
-    main: './src/javascripts/my.js', // パスを変更
+    main: './src/javascripts/index.js', // パスを変更
   },
   // ...
   plugins: [

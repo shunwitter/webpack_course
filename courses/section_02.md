@@ -18,17 +18,16 @@
 % code dist/.main.js
 ```
 
+### Git
+
+- .gitignoreの作成
+- Githubへpush
+
 　　
 　　
 
 このブランチで行ったこと
 --------------------------------
-
-### モードを変更して実行
-
-```shell
-% npx webpack --mode=production
-```
 
 ### ビルドされたJSを使ってみる
 
@@ -37,6 +36,16 @@
 ```shell
 % code ./dist/index.html
 ```
+
+```shell
+% code ./src/modules/my.js
+```
+
+```js
+// index.js
+import './modules/my.js'
+```
+
 
 ```html
 <!-- index.js -->
@@ -65,7 +74,7 @@ main.js:1 this is module
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: './dist/main.js',
+    path: path.resolve(__dirname, './dist'),
   },
 };
 ```
@@ -178,18 +187,6 @@ Javascript以外のファイルを読み込もうとするとエラーになる�
 }
 ```
 
-#### --save / --save-dev / オプションなしの違い
-
-- `--save dependencies` を付けると `dependencies` に入る
-- `--save-dev` を付けると `devDependencies` に入る
-
-コードをパッケージ化して公開する時に影響する。
-dependenciesは `npm install` の際に一緒にインストールされる。
-devDependenciesは `npm install` してもインストールされない。
-
-今回は自分用のプロジェクトであり、パッケージ化しないので、すべて `devDependencies` で良い。
-もしモジュールとして他の人が使えるパッケージにしたい、という場合は `dependencies` を使っていく。
-
 ### ローダーを使う
 
 ```shell
@@ -220,7 +217,7 @@ module.exports = {
 - moduleを追加してruleを設定する。
 - ruleは複数設定できるので配列で指定する。=> `rules`
 - `test:`はどのファイルが対象になるのかを、正規表現で記述。
-- `user:`はどのローダーを使用するかを設定します。
+- `use:`はどのローダーを使用するかを設定します。
 
 ```shell
 % npx webpack --mode=development
@@ -271,10 +268,10 @@ CSSは読み込まれているが、使用されていない状態。
 ```js
 // webpack.config.js
         use: [
+          // 追記
           {
             loader: 'style-loader',
           },
-          // 追記
           {
             loader: 'css-loader',
           }
@@ -323,19 +320,3 @@ index.htmlをブラウザで開くと、文字の色が変わっているはず�
 - css-loaderでCSSをJavascriptに読み込む。
 - Webpackでビルドされた `.js` ファイルを `index.html` に配置。
 - 読み込まれたJavascriptがstyle-loaderによりHTMLにインジェクトされる。
-
-#### 問題 1
-技術的な観点：
-たしかにスタイルは適応されているので、見た目は問題ない。
-ただし、CSSが肥大化してくるとHTMLサイズが大きくなってしまうし、すべてのHTMLでスタイル定義が注入されるのは無駄。
-
-- `.css` を別ファイルに切り出し、そのファイルを毎回参照すれば良い。すべてのHTMLファイルが軽量化する。
-- しかもブラウザがCSSをキャッシュしてくれるので、初回アクセス以降はどのページを閲覧してもCSSファイル分の通信が節約できる。
-
-#### 問題 2
-ビジネス観点：
-従来の静的ウェブサイトのファイル構造と異なるため、受託案件の納品の際に困ることがある。
-クライアントサイドでサイト更新を行う場合に、Webpackの使用を強制することになる。
-
-- `.html / .css / .js` という従来通りの構成にしておけば、納品トラブルが避けられる。
-- その上で、ビルドツールも提供してあげると喜ばれる。

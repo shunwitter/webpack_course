@@ -212,7 +212,7 @@ export default () => {
 ```
 
 ```js
-// dist/javascripts/mainn.js
+// dist/javascripts/main.js
 
 (function () {\n  var obj = {\n    a: 1,\n    b: 2\n  };\n\n  var newObj = _objectSpread({}, obj, {\n    c: 3\n  });\n\n  console.log('this is module', newObj);\n});
 ```

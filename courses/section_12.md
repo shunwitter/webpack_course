@@ -74,6 +74,8 @@ Reactの本体をインストールします。
 Reactのコンポーネントを作成します。
 
 ```jsx
+// reactApp.jsx
+
 import ReactDom from 'react-dom';
 import * as React from 'react';
 

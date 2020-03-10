@@ -115,7 +115,7 @@ ReactもTypeScriptで書くことによって可読性が高まります。
 `.tsx`はすでにWebpackの設定ファイルに追加済です。
 
 ```tsx
-// src/javascripts/alert.tsx
+// src/javascripts/Alert.tsx
 
 import * as React from 'react';
 

@@ -23,11 +23,11 @@ Vueも人気のJSフレームワークですので、導入方法を簡単に説
 Babelの設定は完了していますので、Vueの設定のみ説明していきます。
 
 ```shell
-% npm view vue
-# latest: 2.6.11
-
 % npm view vue-loader
 # latest: 15.8.3
+
+% npm view vue
+# latest: 2.6.11
 
 % npm view vue-template-compiler
 # latest: 2.6.11
