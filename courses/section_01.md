@@ -149,7 +149,7 @@ Host github.com
   User git
 
 # これだけで接続できる
-% ssh -T github
+% ssh -T github.com
 Enter passphrase for key '/Users/ss/.ssh/id_rsa_github': test
 # => Hi shunwitter! You've successfully authenticated, but GitHub does not provide shell access.
 ```
