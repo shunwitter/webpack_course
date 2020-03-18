@@ -1,322 +1,210 @@
 # Section 2
 
-このブランチの前に行ったこと
---------------------------------
+### Gitのメリット
 
-### 設定ファイルなしでのバンドル
+- 変更履歴のトラッキング
+- ロールバック
+- ブランチごとの開発
 
-```shell
-% npx webpack --mode=development
-```
+### Githubのメリット
 
-- デフォルトのエントリーポイントは `index.js`
-- デフォルトのアウトプットは `dist/main.js`
+- デファクトスタンダード
+- チーム開発
 
-### 中身の確認
+### githubの登録
+https://github.com/
 
-```shell
-% code dist/.main.js
-```
+- 登録方法
 
-### Git
+### Gitのインストール
+https://git-scm.com/
 
-- .gitignoreの作成
-- Githubへpush
+- homebrewとMacOSインストーラーのバージョンは異なる
 
-　　
-　　
+### Git user.name を設定
 
-このブランチで行ったこと
---------------------------------
-
-### ビルドされたJSを使ってみる
-
-#### HTMLファイル作成
+- 任意の文字列でOK
+- 各コミットに記録される
+- 後でも変更できる
 
 ```shell
-% code ./dist/index.html
+# 確認
+% git config user.name
+=> shunwitter
+
+# 設定
+# --globalが無いと単独のレポジトリのみ適応
+% git config --global user.name "shun"
+
+# 確認
+% git config user.name
+=> shun
 ```
+
+### Git user.email を設定
+
+GithubはGithubアカウントとコミットを紐付けるために`user.email`を使用しています。
+すべての変更履歴はこのメールアドレスとともに記録され、誰が加えた変更なのかがひと目で分かります。
 
 ```shell
-% code ./src/modules/my.js
+# 確認
+% git config user.email
+
+# 設定
+# --globalが無いと単独のレポジトリのみ適応
+% git config --global user.email "xxx.xxx@gmail.com"
+
+# 確認
+% git config user.email
+=> xxx.xxx@gmail.com
 ```
 
-```js
-// index.js
-import './modules/my.js'
-```
+設定はこれで完了なのですが、プライベートなメールアドレスを公にしたくない人もいると思います。
+普段使っているメールアドレスを登録しても、迷惑メールが増えるといったことは無いと思いますが、心配な人は下記の手順に従ってください。
 
+#### プライベートなメールアドレスを隠す方法
 
-```html
-<!-- index.js -->
-<script src="./main.js"></script>
-```
+Settings > Emails > Keep my email addresses private
 
-#### ブラウザで確認
+チェックボックスするとメールアドレスが生成されます。
+
+> Keep my email addresses private
+> We’ll remove your public profile email and use `3123900+shunwitter@users.noreply.github.com` when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must set your email in Git.
+
+こちらもチェックしておきます。
+
+> Block command line pushes that expose my email
+> If you push commits that use a private email as your author email we will block the push and warn you about exposing your private email.
+
+`3123900+shunwitter@users.noreply.github.com` をuser.emailに使用しましょう。
 
 ```shell
-% open -a "Google Chrome" dist/index.html
+# 設定
+# --globalが無いと単独のレポジトリのみ適応
+% git config --global user.email "3123900+shunwitter@users.noreply.github.com"
+
+# 確認
+% git config user.email
+=> 3123900+shunwitter@users.noreply.github.com
 ```
 
-```
-// Chrome Console
-This is index.js
-main.js:1 this is module
-```
 
-### 設定ファイルを使用してビルドする
+### sshでgithubと接続する
+
+参考：
+- https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+- https://laboradian.com/how-to-use-ssh-agent/
+- https://qiita.com/shizuma/items/2b2f873a0034839e47ce
+- https://qiita.com/naoki_mochizuki/items/93ee2643a4c6ab0a20f5
+
+#### パスフレーズなしの方法
 
 ```shell
-% code webpack.config.js
+% cd ~/.ssh
+
+# id_rsa を確認して上書きしないようにする
+% ls -la
+
+% ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/(username)/.ssh/id_rsa): id_rsa_github
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+
+% ssh -T git@github.com -i ~/.ssh/id_rsa_github
 ```
 
-```js
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, './dist'),
-  },
-};
-```
-
-### この状態でビルドするとエラー
+#### パスフレーズありの方法
 
 ```shell
-% npx webpack --mode=development
+% cd ~/.ssh
 
-Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
- - configuration.output.path: The provided value "./dist/main.js" is not an absolute path!
-   -> The output directory as **absolute path** (required).
+# id_rsa を確認して上書きしないようにする
+% ls -la
+
+% ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/(username)/.ssh/id_rsa): id_rsa_github
+Enter passphrase (empty for no passphrase): test
+Enter same passphrase again: test
+
+% ssh -T git@github.com -i ~/.ssh/id_rsa_github
+Enter passphrase for key '/Users/ss/.ssh/id_rsa_github': test
+# => Hi shunwitter! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-#### output.path は絶対パスを指定する
-
-```js
-const path = require('path');
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, './dist'),
-  },
-};
-```
-
-#### 出力されるファイル名を変更してみる
-
-```js
-const path = require('path');
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'index.js', // テストした後は main.js 戻す
-  },
-};
-```
-
-### スタイルシートを読み込んで見る
+#### コマンドを省略する方法
 
 ```shell
-% code ./src/modules/my.css
+% vim ~/.ssh/config
+
+Host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa_github
+  User git
+
+# これだけで接続できる
+% ssh -T github.com
+Enter passphrase for key '/Users/ss/.ssh/id_rsa_github': test
+# => Hi shunwitter! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-```css
-/* ./src/modules/my.css */
-body {
-  color: lightblue;
-}
-```
-
-```js
-// ./src/index.js
-import my from './modules/my';
-import './modules/my.css'; // add
-
-console.log('This is index.js');
-my();
-```
-
-#### この状態でビルドするとエラー
+#### パスフレーズの入力を省略する方法
+https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 ```shell
-% npx webpack --mode=development
+%vim ~/.ssh/config
 
-ERROR in ./src/modules/my.css 1:5
-Module parse failed: Unexpected token (1:5)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
-> body {
-|   color: lightblue;
-| }
+Host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa_github
+  User git
+  AddKeysToAgent yes # add
+  UseKeychain yes # add
+
+# ssh-agentを起動
+% eval "$(ssh-agent -s)"
+Agent pid 26771
+
+# ssh-agentにSSHキーを追加して、キーチェーンにパスフレーズを保存(Mac限定)
+% ssh-add -K ~/.ssh/id_rsa_github
+Enter passphrase for /Users/ss/.ssh/id_rsa_github: test
+Identity added: /Users/ss/.ssh/id_rsa_github (your_email@example.com)
+
+% ssh -T github
+# => Hi shunwitter! You've successfully authenticated, but GitHub does not provide shell access.
+# パスフレーズの入力が不要になった。
+
+# ssh-agentを終了させる
+# キーチェーンにパスフレーズが登録してあるので、次回からも入力不要。
+% ssh-agent -k
 ```
 
-#### ローダーをインストールする
+### Githubへのプッシュ
 
-Webpackはjavascript。
-Javascript以外のファイルを読み込もうとするとエラーになる。
-読み込めるようにするにはローダーと呼ばれるライブラリが必要。
+Githubとの連携ができましたので、手元のGitの変更履歴をGithubに送ってみたいと思います。
 
-- [css-loader](https://github.com/webpack-contrib/css-loader)
-- [style-loader](https://github.com/webpack-contrib/style-loader)
+- レポジトリを作成
 
 ```shell
-% npm view css-loader
-# latest: 3.4.2
-
-% npm view style-loader
-# latest: 1.1.3
-
-% npm install --save-dev css-loader@3.4.2 style-loader@1.1.3
+% git init
+% git remote add origin xxxxxx
+% vim test.md
+% git add .
+% git commit -m 'Initial commit'
+% git push
 ```
 
-#### 確認
+コミット履歴を確認し、URLの最後に`.patch`と付け加えてリターンを押します。
 
-```shell
-% code package.json
-```
+- 例：
+  - https://github.com/user_name/repo_name/commit/xxxxxxxxx78c1303931ce67.patch
 
-```json
-{
-  "devDependencies": {
-    "css-loader": "^3.4.2",
-    "style-loader": "^1.1.3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
-  }
-}
-```
+変更履歴が表示されますが、下記を確認してください。
 
-### ローダーを使う
+- 自分の`user.name`が設定されている
+- 自分の`user.email`が設定されている
+- メールアドレスを隠した人は、メールアドレスが`noreply`である
 
-```shell
-code webpack.config.js
-```
-
-```js
-// webpack.config.js
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    ...
-  },
-  // moduleを追加
-  module: {
-    rules: [
-      {
-        test: /\.css/,
-        use: [{
-          loader: 'css-loader',
-        }],
-      },
-    ],
-  },
-};
-```
-
-- moduleを追加してruleを設定する。
-- ruleは複数設定できるので配列で指定する。=> `rules`
-- `test:`はどのファイルが対象になるのかを、正規表現で記述。
-- `use:`はどのローダーを使用するかを設定します。
-
-```shell
-% npx webpack --mode=development
-```
-
-#### 動作確認
-
-index.html をブラウザで確認。正常に動作しているはず。
-
-#### main.js を確認してみる
-
-```shell
-% code ./dist/main.js
-
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"body {\\n  color: lightblue;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/modules/my.css?");
-
-# ↑
-# CSSらしき記述は見つかった
-#
-```
-
-```js
-// evalの次に下のコマンドを入れてみる
-console.log(exports[0][1]);
-```
-
-index.html を確認するとコンソールログが出力されている。
-
-```shell
-% open -a "Google Chrome" dist/index.html
-```
-
-```
-# スタイルが出力された
-body {
-  color: lightblue;
-}
-
-index.js:8 This is index.js
-my.js:3 this is module
-```
-
-しかしスタイルが反映されていない。
-CSSは読み込まれているが、使用されていない状態。
-
-### style-loader を使う
-
-```js
-// webpack.config.js
-        use: [
-          // 追記
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          }
-        ],
-```
-
-再度ビルドする。
-
-```shell
-% npx webpack --mode=development
-```
-
-#### main.js を確認してみる
-
-```shell
-% code ./dist/main.js
-
-# !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-
-# ↑
-# Styleタグを注入しているような記述
-#
-```
-
-#### HTMLを確認する
-
-```shell
-% open -a "Google Chrome" dist/index.html
-```
-
-index.htmlをブラウザで開くと、文字の色が変わっているはず。
-開発者ツールでElementsを確認。
-
-```html
-<style>body {
-  color: lightblue;
-}
-</style>
-```
-
-スタイルシートがHTMLにインジェクトされている。
-
-### すべてJavascriptにバンドルする方法の問題点
-
-#### CSSが適応される流れ
-- css-loaderでCSSをJavascriptに読み込む。
-- Webpackでビルドされた `.js` ファイルを `index.html` に配置。
-- 読み込まれたJavascriptがstyle-loaderによりHTMLにインジェクトされる。
