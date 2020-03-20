@@ -76,12 +76,12 @@ Settings > Emails > Keep my email addresses private
 > Block command line pushes that expose my email
 > If you push commits that use a private email as your author email we will block the push and warn you about exposing your private email.
 
-`3123900+shunwitter@users.noreply.github.com` をuser.emailに使用しましょう。
+ダミーのEメール `3123900+xxxxxxx@users.noreply.github.com` をuser.emailに使用しましょう。
 
 ```shell
 # 設定
 # --globalが無いと単独のレポジトリのみ適応
-% git config --global user.email "3123900+shunwitter@users.noreply.github.com"
+% git config --global user.email "3123900+xxxxxxx@users.noreply.github.com"
 
 # 確認
 % git config user.email
