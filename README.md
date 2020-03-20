@@ -69,14 +69,14 @@ Settings > Emails > Keep my email addresses private
 チェックボックスするとメールアドレスが生成されます。
 
 > Keep my email addresses private
-> We’ll remove your public profile email and use `3123900+shunwitter@users.noreply.github.com` when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must set your email in Git.
+> We’ll remove your public profile email and use `3123900+xxxxxxx@users.noreply.github.com` when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must set your email in Git.
 
 こちらもチェックしておきます。
 
 > Block command line pushes that expose my email
 > If you push commits that use a private email as your author email we will block the push and warn you about exposing your private email.
 
-ダミーのEメール `3123900+xxxxxxx@users.noreply.github.com` をuser.emailに使用しましょう。
+ダミーのメールアドレス `3123900+xxxxxxx@users.noreply.github.com` をuser.emailに使用しましょう。
 
 ```shell
 # 設定
