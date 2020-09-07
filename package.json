@@ -24,7 +24,7 @@
     "image-webpack-loader": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "pug-html-loader": "^1.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -36,7 +36,11 @@
     "url-loader": "^3.0.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bl": ">=2.2.1",
+    "http-proxy": ">=1.18.1",
+    "serialize-javascript": ">=3.1.0"
+  }
 }
