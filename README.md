@@ -67,19 +67,20 @@ Webpackを利用してES6を使いつつ、ES5に自動的に変換するよう�
   - `@babel/core`
   - `@babel/preset-env`
 
+
 ```shell
 % npm view babel-loader
-# latest: 8.0.6
+# latest: 8.2.2
 
 % npm view @babel/core
-# latest: 7.8.4
+# latest: 7.12.10
 
 % npm view @babel/preset-env
-# latest: 7.8.4
+# latest: 7.12.11
 
-% npm install --save-dev babel-loader@8.0.6
-% npm install --save-dev @babel/core@7.8.4
-% npm install --save-dev @babel/preset-env@7.8.4
+% npm install --save-dev babel-loader@8.2.2
+% npm install --save-dev @babel/core@7.12.10
+% npm install --save-dev @babel/preset-env@7.12.11
 ```
 
 ```js
