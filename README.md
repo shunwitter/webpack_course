@@ -29,13 +29,13 @@ HTMLについてはPugを利用して効率化できました。
 
 ```shell
 % npm view node-sass
-# latest: 4.13.1
+# latest: 5.0.0
 
 % npm view sass-loader
-# latest: 8.0.2
+# latest: 10.1.1
 
-% npm install --save-dev node-sass@4.13.1
-% npm install --save-dev sass-loader@8.0.2
+% npm install --save-dev node-sass@5.0.0
+% npm install --save-dev sass-loader@10.1.1
 ```
 
 ```js
