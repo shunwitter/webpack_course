@@ -32,13 +32,14 @@ Webpackでは、ローカルサーバーをとても簡単に立ち上げるこ�
 
 ```shell
 % npm view webpack-dev-server
-# latest: 3.10.3
+# latest: 3.11.2
 
-% npm install --savve-dev webpack-dev-server@3.10.3
+% npm install --savve-dev webpack-dev-server@3.11.2
 ```
 
 ```shell
-% npx webpack-dev-server
+# Webpack 5 では serve コマンドを使います
+% npx webpack serve --mode=development
 
 ℹ ｢wds｣: Project is running at http://localhost:8080/
 ℹ ｢wds｣: webpack output is served from /
@@ -167,7 +168,7 @@ block content
 # control + c で webpack-dev-server を終了させる
 
 # 再度起動
-% npx webpack-dev-server
+% npx webpack serve --mode=development
 
                  Asset       Size  Chunks             Chunk Names
 ./stylesheets/main.css   30 bytes    main  [emitted]  main
@@ -250,7 +251,7 @@ div
 ローカルサーバーを起動して、3つのリンクが正常に動作していることを確認してください。
 
 ```shell
-% npx webpack-dev-server
+% npx webpack serve --mode=development
 ```
 
 ルートから見たパスを指定してた上で、ファイルシステムを使ってテストしてもうまくいきません。
