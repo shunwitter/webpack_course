@@ -24,17 +24,17 @@ Babelの設定は完了していますので、Vueの設定のみ説明してい
 
 ```shell
 % npm view vue-loader
-# latest: 15.8.3
+# latest: 15.9.6
 
 % npm view vue
-# latest: 2.6.11
+# latest: 2.6.12
 
 % npm view vue-template-compiler
-# latest: 2.6.11
+# latest: 2.6.12
 
-% npm install --save-dev vue-loader@15.8.3
-% npm install --save-dev vue@2.6.11
-% npm install --save-dev vue-template-compiler@2.6.11 # vueのバージョンと合わせる
+% npm install --save-dev vue-loader@15.9.6
+% npm install --save-dev vue@2.6.12
+% npm install --save-dev vue-template-compiler@2.6.12 # vueのバージョンと合わせる
 ```
 
 ```js
