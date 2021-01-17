@@ -9,6 +9,8 @@
 
 -----------------------------------
 
+## Webpack 4
+
 - https://github.com/shunwitter/webpack_course/tree/section/01
 - https://github.com/shunwitter/webpack_course/tree/section/02
 - https://github.com/shunwitter/webpack_course/tree/section/03
@@ -27,3 +29,25 @@
 - https://github.com/shunwitter/webpack_course/tree/section/16
 - https://github.com/shunwitter/webpack_course/tree/section/17
 - https://github.com/shunwitter/webpack_course/tree/section/18
+
+
+## Webpack 5
+
+- https://github.com/shunwitter/webpack_course/tree/section/01
+- https://github.com/shunwitter/webpack_course/tree/section/02
+- https://github.com/shunwitter/webpack_course/tree/5x/section/03
+- https://github.com/shunwitter/webpack_course/tree/5x/section/04
+- https://github.com/shunwitter/webpack_course/tree/5x/section/05
+- https://github.com/shunwitter/webpack_course/tree/5x/section/06
+- https://github.com/shunwitter/webpack_course/tree/5x/section/07
+- https://github.com/shunwitter/webpack_course/tree/5x/section/08
+- https://github.com/shunwitter/webpack_course/tree/5x/section/09
+- https://github.com/shunwitter/webpack_course/tree/5x/section/10
+- https://github.com/shunwitter/webpack_course/tree/5x/section/11
+- https://github.com/shunwitter/webpack_course/tree/5x/section/12
+- https://github.com/shunwitter/webpack_course/tree/5x/section/13
+- https://github.com/shunwitter/webpack_course/tree/5x/section/14
+- https://github.com/shunwitter/webpack_course/tree/5x/section/15
+- https://github.com/shunwitter/webpack_course/tree/5x/section/16
+- https://github.com/shunwitter/webpack_course/tree/5x/section/17
+- https://github.com/shunwitter/webpack_course/tree/5x/section/18
