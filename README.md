@@ -36,9 +36,9 @@ CSSを別ファイルに出力するには `MiniCssExtractPlugin` というプ�
 
 ```shell
 % npm view mini-css-extract-plugin
-# latest: 0.9.0
+# latest: 1.3.4
 
-% npm install --save-dev mini-css-extract-plugin@0.9.0
+% npm install --save-dev mini-css-extract-plugin@1.3.4
 ```
 
 ### プラグインを使用する
@@ -155,9 +155,10 @@ body {
 
 ```shell
 % npm view html-webpack-plugin
-#  latest: 3.2.0
+# latest: 4.5.1
+# next: 5.0.0-beta.5 // 5.x に対応するためこちらを使用します
 
-% npm install --save-dev html-webpack-plugin@3.2.0
+% npm install --save-dev html-webpack-plugin@5.0.0-beta.5
 ```
 
 #### プラグインを使用する設定を追加
