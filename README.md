@@ -21,13 +21,13 @@ TypeScriptを使うと、Javascriptの世界にいながら型を利用できま
 
 ```shell
 % npm view typescript
-# latest: 3.7.5
+# latest: 4.1.3
 
 % npm view ts-loader
-# latest: 6.2.1
+# latest: 8.0.14
 
-% npm install --save-dev typescript@3.7.5
-% npm install --save-dev ts-loader@6.2.1
+% npm install --save-dev typescript@4.1.3
+% npm install --save-dev ts-loader@8.0.14
 ```
 
 ```js
@@ -179,9 +179,9 @@ Could not find a declaration file for module 'react'. '/Users/ss/Dev/webpack_cou
 
 ```shell
 % npm view @types/react
-# latest: 16.9.19
+# latest: 17.0.0
 
-% npm install --save-dev @types/react@16.9.19
+% npm install --save-dev @types/react@17.0.0
 ```
 
 完了したらアラートも消えるかと思います。
