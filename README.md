@@ -62,25 +62,23 @@ Netrifyを使わなくても、その他いろいろなサービス（例えばA
 
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'javascripts/[name]-[hash].js', // 変更
+    filename: 'javascripts/[name]-[contenthash].js', // 変更
   },
 
   // ...
 
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              name: 'images/[name]-[hash].[ext]', // 変更
-              publicPath: '/',
-            },
-          },
+      {
+        test: /\.png|\.jpg/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name]-[contenthash][ext]',  // 変更
+        },
 
   // ...
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './stylesheets/[name]-[hash].css', // 変更
+      filename: './stylesheets/[name]-[contenthash].css', // 変更
     }),
   ]
 
