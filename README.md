@@ -27,9 +27,9 @@ Reactに対応するには`@babel/preset-react`をインストールします。
 
 ```shell
 % npm view @babel/preset-react
-# latest: 7.8.3
+# latest: 7.12.10
 
-% npm install --save-dev @babel/preset-react@7.8.3
+% npm install --save-dev @babel/preset-react@7.12.10
 ```
 
 ```js
@@ -61,13 +61,13 @@ Reactの本体をインストールします。
 
 ```shell
 % npm view react
-# latest: 16.12.0
+# latest: 17.0.1
 
 % npm view react-dom
-# latest: 16.12.0
+# latest: 17.0.1
 
-% npm install --save-dev react@16.12.0
-% npm install --save-dev react-dom@16.12.0
+% npm install --save-dev react@17.0.1
+% npm install --save-dev react-dom@17.0.1
 ```
 
 #### Reactコンポーネント
