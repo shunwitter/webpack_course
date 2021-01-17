@@ -71,7 +71,7 @@ Sassを使用していますので、CSSのビルド前コードをChromeで確�
 ```
 
 ```shell
-% npx webpack-dev-server
+% npx webpack serve --mode=development
 ```
 
 今度はCherome開発者ツールの`Elements`を開き、
@@ -117,7 +117,7 @@ module.exports = {
 ```shell
 % npx webpack
 % npx webpack --mode=development # webpack.config.js を上書きできる
-% npx webpack-dev-server
+% npx webpack serve --mode=development
 ```
 
 コマンドが増えてきたので`package.json`にまとめたいと思います。
@@ -146,7 +146,7 @@ module.exports = {
     // 削除
     // "test": "echo \"Error: no test specified\" && exit 1"
     // 追加
-    "start": "webpack-dev-server",
+    "start": "npx webpack serve --mode=development",
     "build": "webpack --mode=production",
     "build:dev": "webpack"
   },
@@ -161,5 +161,3 @@ module.exports = {
 % npm run build
 % npm run build:dev
 ```
-
-
