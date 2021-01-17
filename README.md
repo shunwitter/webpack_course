@@ -162,12 +162,12 @@ Javascript以外のファイルを読み込もうとするとエラーになる�
 
 ```shell
 % npm view css-loader
-# latest: 3.4.2
+# latest: 5.0.1
 
 % npm view style-loader
-# latest: 1.1.3
+# latest: 2.0.0
 
-% npm install --save-dev css-loader@3.4.2 style-loader@1.1.3
+% npm install --save-dev css-loader@5.0.1 style-loader@2.0.0
 ```
 
 #### 確認
@@ -179,8 +179,8 @@ Javascript以外のファイルを読み込もうとするとエラーになる�
 ```json
 {
   "devDependencies": {
-    "css-loader": "^3.4.2",
-    "style-loader": "^1.1.3",
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
