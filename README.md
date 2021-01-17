@@ -29,22 +29,16 @@
 # インストール可能なnodeバージョンを確認
 % nvm ls-remote
 
-       v12.13.0   (LTS: Erbium)
-->     v12.13.1   (LTS: Erbium)
-       v12.14.0   (LTS: Erbium)
-       v12.14.1   (LTS: Erbium)
-       v12.15.0   (Latest LTS: Erbium)
-
 # 特定のnodeバージョンをインストール
-% nvm install 12.15.0
+% nvm install 14.15.0
 
 # インストールされているnodeバージョンを確認
 % nvm ls
-->     v12.13.1
+->     v14.15.0
 
 # 現在のnodeバージョンを確認
 % node --version
-v12.13.1
+v14.15.0
 ```
 　　
 #### Webpackのインストール
@@ -53,12 +47,12 @@ v12.13.1
 % npm init
 
 % npm view webpack
-# latest: 4.41.5
+# latest: 5.15.0
 
 % npm view webpack-cli
-# latest: 3.3.10
+# latest: 4.3.1
 
-% npm install --save-dev webpack@4.41.5 webpack-cli@3.3.10
+% npm install --save-dev webpack@5.15.0 webpack-cli@4.3.1
 ```
 
 #### --save / --save-dev / オプションなしの違い
@@ -79,7 +73,7 @@ devDependenciesは `npm install` してもインストールされない。
 ```shell
 % mkdir src // Webpackのデフォルト設定（後で変更することもできます）
 
-### VScodeが立ち上がります
+### VS Code が立ち上がります
 % code index.js
 
 % npx webpack
