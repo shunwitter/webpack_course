@@ -365,3 +365,63 @@ WARNING in Conflict: Multiple assets emit different content to the same filename
 ```
 
 ブラウザでも2つの画像が表示されていることを確認してください。
+
+
+-------------------
+
+
+## 5.x での新しい書き方
+
+Webpack 5 では [Asset Modules](https://webpack.js.org/guides/asset-modules/) が導入されました。
+4.x では url-loader や file-loader を使って画像ファイルをハンドリングしていましたが、それらがデフォルトでサポートされています。
+
+`type: 'asset/resource'` を追加するだけで使用できます。
+注意点は `filename` です。
+
+file-loader では `[ext]` にはピリオドが含まれていませんでしたが、Asset Modules では含まれるようです。
+ですので、ファイル名は `filename: 'images/[name][ext]'` となります。
+
+
+```js
+// webpack.config.js
+
+  // ...
+
+      {
+        test: /\.png|.jpg/,
+        // 追加
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
+        // 削除
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     options: {
+        //       esModule: false,
+        //       name: 'images/[name].[ext]',
+        //     },
+        //   },
+        // ],
+      },
+
+// ...
+
+```
+
+ビルドが同様の結果になることを確認してください。
+
+```bash
+% npx webpack --mode=development
+
+assets by path images/ 274 KiB
+  asset images/thumbnail.jpg 264 KiB [emitted] [from: src/images/thumbnail.jpg]
+  asset images/icon.png 9.75 KiB [emitted] [from: src/images/icon.png]
+```
+
+不要なライブラリを削除します。
+
+```
+% npm uninstall file-loader url-loader
+```
