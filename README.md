@@ -6,6 +6,7 @@
 - 画像をテンプレートに設置しました
 - `url-loader`を使って画像を文字列として読み込みました
 - `file-loader`を使って画像を任意の場所に出力しました
+- Webpack 5 の新機能、Asset Module で `file-loader` を置き換えた
 
 　　
 　　
@@ -20,10 +21,10 @@
 # latest: 1.1.5
 
 % npm view html-loader
-# latest: 0.5.5
+# latest: 1.3.2
 
 % npm install --save-dev pug-html-loader@1.1.5
-% npm install --save-dev html-loader@0.5.5
+% npm install --save-dev html-loader@1.3.2
 ```
 
 ```js
