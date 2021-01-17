@@ -12,6 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'javascripts/main.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -55,16 +56,19 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg)$/i,
+        test: /\.png|\.jpg/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              name: 'images/[name].[ext]',
-              publicPath: '/',
-            },
-          },
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     esModule: false,
+          //     name: 'images/[name].[ext]',
+          //   },
+          // },
           {
             loader: 'image-webpack-loader',
             options: {

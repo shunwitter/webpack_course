@@ -266,14 +266,20 @@ block content
 // webpack.config.js
 
 {
-  loader: 'file-loader',
-  options: {
-    esModule: false,
-    name: 'images/[name].[ext]',
+  // ...
+
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'javascripts/main.js',
     // 追加
+    // 4.x では file-loader のオプションとして追加しましたが、
+    // 5.x では Asset Modules を使うので output の中に入れます。
     publicPath: '/',
   },
-},
+
+  // ...
+}
+
 ```
 
 ### styled-component
@@ -284,9 +290,9 @@ Reactのスタイルシートを効率的に書ける方法を紹介します。
 
 ```shell
 % npm view styled-components
-# latest: 5.0.1
+# latest: 5.2.1
 
-% npm install --save-dev styled-components@5.0.1
+% npm install --save-dev styled-components@5.2.1
 ```
 
 ```jsx
