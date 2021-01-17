@@ -11,7 +11,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'javascripts/[name]-[hash].js',
+    filename: 'javascripts/[name]-[contenthash].js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -56,15 +57,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name]-[contenthash].[ext]',
+        },
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              name: 'images/[name]-[hash].[ext]',
-              publicPath: '/',
-            },
-          },
           {
             loader: 'image-webpack-loader',
             options: {
@@ -94,7 +91,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './stylesheets/[name]-[hash].css',
+      filename: './stylesheets/[name]-[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/templates/index.pug',
