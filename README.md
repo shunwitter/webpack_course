@@ -36,30 +36,34 @@
 
 ```shell
 % npm view image-webpack-loader
-# latest: 6.0.0
+# latest: 7.0.1
 
-% npm install --save-dev image-webpack-loader@6.0.0
+% npm install --save-dev image-webpack-loader@7.0.1
 ```
 
 ```js
 // webpack.config.js
 
 {
-  test: /\.(png|jpg|jpeg)$/i,
+  test: /\.(png|jpg|jpeg)/,
+  type: 'asset/resource',
+  generator: {
+    filename: 'images/[name][ext]',
+  },
   use: [
-    {
-      loader: 'file-loader',
-      options: {
-        esModule: false,
-        name: 'images/[name].[ext]',
-      },
-    },
+    // {
+    //   loader: 'file-loader',
+    //   options: {
+    //     esModule: false,
+    //     name: 'images/[name].[ext]',
+    //   },
+    // },
+
     // 追加
     {
       loader: 'image-webpack-loader',
     },
   ],
-},
 },
 ```
 
@@ -79,15 +83,19 @@
 // webpack.config.js
 
 {
-  test: /\.(png|jpg|jpeg)$/i,
+  test: /\.(png|jpg|jpeg)/,
+  type: 'asset/resource',
+  generator: {
+    filename: 'images/[name][ext]',
+  },
   use: [
-    {
-      loader: 'file-loader',
-      options: {
-        esModule: false,
-        name: 'images/[name].[ext]',
-      },
-    },
+    // {
+    //   loader: 'file-loader',
+    //   options: {
+    //     esModule: false,
+    //     name: 'images/[name].[ext]',
+    //   },
+    // },
     {
       loader: 'image-webpack-loader',
       // 追加
