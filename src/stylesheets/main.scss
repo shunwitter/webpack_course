@@ -23,3 +23,12 @@ $text-color: orange;
   }
   @include set-margin(right, 16px);
 }
+
+::placeholder {
+  color: blue;
+}
+
+.test-element {
+  position: sticky;
+  display: flex;
+}
