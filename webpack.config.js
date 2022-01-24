@@ -59,7 +59,10 @@ module.exports = {
         test: /\.png|\.jpg/,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name]-[contenthash][ext]',
+          filename: (pathData) => {
+            const filePath = path.dirname(pathData.filename).split('/').slice(1).join('/');
+            return `${filePath}/[name]-[contenthash][ext]`;
+          },
         },
         use: [
           // {
