@@ -22,20 +22,16 @@ HTMLについてはPugを利用して効率化できました。
 10ページ以上あるようなウェブサイトの場合はぜひ最初から採用を検討してください。
 
 今回は、[Sass](https://sass-lang.com/)をつかって、CSSを効率的にビルドしていきたいと思います。
-`sass-loader`を使用しますが、`node-sass`に依存していますので、どちらもインストールしていきます。
+~~`sass-loader`を使用しますが、`node-sass`に依存していますので、どちらもインストールしていきます。~~
+**`node-sass`は非推奨となりました。`sass`を利用してください。**
 
 - [sass-loader](https://github.com/webpack-contrib/sass-loader)
-- [node-sass](https://github.com/sass/node-sass)
+- ~~[node-sass](https://github.com/sass/node-sass)~~（非推奨）
+- [sass](https://www.npmjs.com/package/sass)
 
 ```shell
-% npm view node-sass
-# latest: 5.0.0
-
-% npm view sass-loader
-# latest: 10.1.1
-
-% npm install --save-dev node-sass@5.0.0
-% npm install --save-dev sass-loader@10.1.1
+% npm install --save-dev sass@1.49.9
+% npm install --save-dev sass-loader@12.4.0
 ```
 
 ```js
@@ -131,7 +127,7 @@ body
 
 - ネスト
 - 変数
-- @import
+- ~~@import~~（@use に変更となりました）
 - @extend
 - @mixin
 - etc...
@@ -173,10 +169,10 @@ $text-color: orange;
   color: orange; }
 ```
 
-#### @import
+#### @use
 
 ```scss
-@import './footer';
+@use './footer';
 $text-color: orange;
 .content {
   .title {
@@ -205,7 +201,7 @@ $text-color: orange;
 #### @extend
 
 ```scss
-@import './footer';
+@use './footer';
 $text-color: orange;
 .content {
   .title {
@@ -234,7 +230,7 @@ $text-color: orange;
 #### @mixin
 
 ```scss
-@import './footer';
+@use './footer';
 
 @mixin set-margin($direction, $value) {
   margin-#{$direction}: $value;
