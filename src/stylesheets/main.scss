@@ -1,5 +1,5 @@
-@import 'menu.scss';
-@import 'footer.scss';
+@use 'menu.scss';
+@use 'footer.scss';
 
 html, body, div, p, img, h1, h2, h3, h4, h5 {
   box-sizing: border-box;
