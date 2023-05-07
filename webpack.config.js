@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
   mode: 'production',
@@ -38,6 +39,15 @@ module.exports = {
               ],
             },
           },
+        ],
+      },
+      {
+        test: /\.vue/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'vue-loader',
+          }
         ],
       },
       {
@@ -113,5 +123,6 @@ module.exports = {
       filename: 'members/taro.html',
     }),
     new CleanWebpackPlugin(),
+    new VueLoaderPlugin(),
   ],
 };
