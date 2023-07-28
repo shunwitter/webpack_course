@@ -8,6 +8,7 @@ module.exports = {
   // devtool: 'eval-source-map',
   entry: {
     main: './src/javascripts/main.js',
+    sub: './src/javascripts/sub.js',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -107,6 +108,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/templates/access.pug',
       filename: 'access.html',
+      chunks: [
+        'sub',
+      ],
     }),
     new HtmlWebpackPlugin({
       template: './src/templates/members/taro.pug',
